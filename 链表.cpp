@@ -1,16 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
-//¶¨Òå½á¹¹Ìå 
+//å®šä¹‰ç»“æ„ä½“ 
 struct node{
 	int val;
 	struct node * next;
 };
 typedef struct node tag;
 typedef struct node* Ptag;
-//½á¹¹Ìå´óĞ¡ 
+//ç»“æ„ä½“å¤§å° 
 int size=sizeof(tag);
 
-//¶¨Òåº¯Êı 
+//å®šä¹‰å‡½æ•° 
 void list_insert(Ptag* ,int ,int );
 void list_show(Ptag*);
 void list_del(Ptag *,int );
@@ -35,11 +35,11 @@ int main()
 	
 	while(true)
 	{
-	printf("ÇëÊäÈë¹¦ÄÜ´úÂë:\n");
-	printf("1Õ¹Ê¾:\n");
-	printf("2Ìí¼Ó:\n");
-	printf("3É¾³ı:\n");
-	printf("0ÍË³ö:\n");
+	printf("è¯·è¾“å…¥åŠŸèƒ½ä»£ç :\n");
+	printf("1å±•ç¤º:\n");
+	printf("2æ·»åŠ :\n");
+	printf("3åˆ é™¤:\n");
+	printf("0é€€å‡º:\n");
 	scanf("%d",&sel);
 	switch(sel)
 	{
@@ -48,14 +48,14 @@ int main()
 			break;
 		}
 		case 2:{
-		printf("ÇëÊäÈë²åÈëµÄÎ»ÖÃºÍÊı:\n");
+		printf("è¯·è¾“å…¥æ’å…¥çš„ä½ç½®å’Œæ•°:\n");
 		scanf("%d %d",&a,&b);
 		list_insert(&t,a,b);
 		list_show(&t);
 			break;
 		}
 		case 3:{
-		printf("ÇëÊäÈëÉ¾³ıµÄÎ»ÖÃ:\n");
+		printf("è¯·è¾“å…¥åˆ é™¤çš„ä½ç½®:\n");
 		scanf("%d",&a);
 		list_del(&t,a);
 		list_show(&t);
@@ -75,12 +75,12 @@ void list_init()
 {
 	
 }
-//²åÈëÁĞ±í indexÎªÎ»ÖÃ valÎªÖµ 
+//æ’å…¥åˆ—è¡¨ indexä¸ºä½ç½® valä¸ºå€¼ 
 void list_insert(Ptag* head,int index,int val)
 {
 	if(index<1)
 	{
-		printf("²åÈëÎ»ÖÃ´íÎó!\n");	
+		printf("æ’å…¥ä½ç½®é”™è¯¯!\n");	
 		return; 
 	}
 	if(index==1)
@@ -95,7 +95,7 @@ void list_insert(Ptag* head,int index,int val)
 	Ptag thead=*head;
 	if(thead==NULL)
 	{
-		printf("²åÈëÎ»ÖÃ´íÎó!\n");	
+		printf("æ’å…¥ä½ç½®é”™è¯¯!\n");	
 		return ;		
 	}
 	for(int i=2;i<index;i++)
@@ -106,7 +106,7 @@ void list_insert(Ptag* head,int index,int val)
 		}
 		else
 		{
-			printf("²åÈëÎ»ÖÃ´íÎó!\n");	
+			printf("æ’å…¥ä½ç½®é”™è¯¯!\n");	
 			return ;
 		}
 	}
@@ -116,7 +116,7 @@ void list_insert(Ptag* head,int index,int val)
 	p1->next=thead->next;
 	thead->next=p1;
 }
-//´òÓ¡ÁĞ±í 
+//æ‰“å°åˆ—è¡¨ 
 void list_show(Ptag *head)
 {
 	Ptag thead=*head; 
@@ -127,7 +127,7 @@ void list_show(Ptag *head)
 	}
 	else
 	{
-		printf("ÁĞ±íÎª¿Õ!");
+		printf("åˆ—è¡¨ä¸ºç©º!");
 	}
 	while(thead!=NULL)
 	{
@@ -136,13 +136,13 @@ void list_show(Ptag *head)
 	}
 	putchar('\n');
 }
-//¸ù¾İÎ»ÖÃÉ¾³ı 
+//æ ¹æ®ä½ç½®åˆ é™¤ 
 void list_del(Ptag *head,int index)
 {
 	Ptag thead=*head;
 	if(index<1)
 	{
-		printf("É¾³ıÎ»ÖÃ´íÎó!\n");	
+		printf("åˆ é™¤ä½ç½®é”™è¯¯!\n");	
 		return; 
 	}
 	if(index==1)
@@ -160,7 +160,7 @@ void list_del(Ptag *head,int index)
 		}
 		else
 		{
-			printf("É¾³ıÎ»ÖÃ´íÎó!\n");	
+			printf("åˆ é™¤ä½ç½®é”™è¯¯!\n");	
 			return ;
 		}
 	}
